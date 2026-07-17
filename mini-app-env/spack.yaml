@@ -52,37 +52,24 @@ spack:
             prefer:
               - target=x86_64_v3
   repos:
-#    patches:
-#      git: https://github.com/gyselax/spack.git
-#      branch: releases/v2025.11
     builtin:
       branch: develop
-  #  view: true
+
   view:
     default:
       root: ./view
       projections:
         all: "{architecture.target}/{name}"
+
   mirrors:
     numpex-spack-mirror:
       url: oci://ghcr.io/numpex/spack-stack
-      access_pair:
-        id_variable: REGISTRY_USER
-        secret_variable: REGISTRY_TOKEN
+
+  config:
+    install_tree:
+      root: /opt/spack # path to the spack install dir. Important to keep /opt/spack for binary cache
+      padded_length: 128
+
   packages:
-#    all:
-#      variants: ~fortran ~mpi ~openmp cxxstd=17
-#      target:
-#        - skylake
-#    blas:
-#      require: openblas@0.3
-#    lapack:
-#      require: openblas@0.3
-#    mpi:
-#      require: openmpi@5.0
-#    pdi:
-#      require:
-#        - spec: ~python
-#          when: platform=darwin
     py-pandas:
       require: ~performance
