@@ -1,0 +1,3 @@
+[submodule "gysela-mini-app"]
+	path = gysela-mini-app
+	url = https://github.com/gyselax/gysela-mini-app_io.git
